@@ -1,12 +1,12 @@
-#Example Distroless for .NET 6
+#Example Distroless for .NET 6 > 7
 
-FROM mcr.microsoft.com/dotnet/nightly/aspnet:6.0-jammy-chiseled AS base
+FROM mcr.microsoft.com/dotnet/nightly/aspnet:7.0-jammy-chiseled AS base
 
 WORKDIR /app
 EXPOSE 80
 EXPOSE 443
 
-FROM mcr.microsoft.com/dotnet/sdk:6.0-jammy AS build
+FROM mcr.microsoft.com/dotnet/sdk:7.0-jammy AS build
 WORKDIR /src
 COPY ["WebApplication3.csproj", "."]
 RUN dotnet restore "./WebApplication3.csproj"
